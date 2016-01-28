@@ -29,6 +29,12 @@ AWS EC2にAmazon Linuxのインスタンスを作成し、デプロイしまし�
 * 計算結果で小数部が10桁を超える場合、四捨五入で切り捨てる
 * セッションタイムアウトは30分
 
+## 状態遷移
+
+電卓のボタン押下イベントによって、以下の処理と状態遷移を行っています。
+
+![状態遷移](https://raw.githubusercontent.com/TamotsuWatanabe/Calculator/master/state.png)
+
 ## 工数
 
 20時間
