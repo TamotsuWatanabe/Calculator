@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <!-- logをファイルに出力 -->
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+
+        <!-- 出力するファイル名 -->
+        <file>../logs/calculator.log</file>
+
+        <!-- ローテートするルール -->
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- ローテートするファイル名 -->
+            <fileNamePattern>../logs/calculator_%d.log</fileNamePattern>
+        </rollingPolicy>
+
+        <encoder>
+            <!-- 出力パターン -->
+            <pattern>%date{yyyy/MM/dd HH:mm:ss:SSS} [%thread] %-5level %logger{35} - %msg%n</pattern>
+        </encoder>
+
+    </appender> 
+
+    <!-- ログ出力に関する設定 -->
+    <root level="INFO">
+        <!-- 出力先Appendar -->
+        <appender-ref ref="FILE" />
+    </root>
+
+</configuration>

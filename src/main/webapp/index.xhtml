@@ -1,0 +1,77 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xml:lang="ja">
+
+    <h:head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <f:facet name="first">
+            <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+        </f:facet>
+
+        <title>Calculator</title>
+
+        <link rel="stylesheet" href="#{facesContext.externalContext.requestContextPath}/resources/bootstrap/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="#{facesContext.externalContext.requestContextPath}/resources/bootstrap/css/bootstrap-theme.min.css" />
+        <script src="#{facesContext.externalContext.requestContextPath}/resources/bootstrap/js/bootstrap.min.js" />
+
+        <link rel="stylesheet" href="#{facesContext.externalContext.requestContextPath}/resources/css/common.css" />
+
+        <h:outputText escape="false" value="&lt;!--[if lt IE 9]&gt;" />
+        <h:outputText escape="false" value="&lt;script src=&quot;#{facesContext.externalContext.requestContextPath}/resources/html5shiv/html5shiv.min.js&quot;&gt;&lt;/script&gt;" />
+        <h:outputText escape="false" value="&lt;script src=&quot;#{facesContext.externalContext.requestContextPath}/resources/respond/respond.min.js&quot;&gt;&lt;/script&gt;" />
+        <h:outputText escape="false" value="&lt;![endif]--&gt;" />
+    </h:head>
+
+    <h:body>
+
+        <div id="navbar" class="navbar navbar-inverse">
+            <div class="col-lg-10 col-lg-offset-1">
+                <div class="navbar-header">
+                    <div class="navbar-brand" style="color: white;">Calculator</div>
+                </div>
+            </div>
+        </div>
+            <div class="col-sm-6 col-sm-offset-3">
+            <h:form id="form">
+                <div class="form-group">
+                    <p:inputText id="display" value="#{indexBean.displayNumber()}" disabled="true" class="text"/>
+                </div>                
+                <div class="form-group">
+                    <p:commandButton value="C" class="btn btn-default" actionListener="#{indexBean.inputClear()}" update="display"/>
+                    <p:commandButton value="+-" class="btn btn-default" actionListener="#{indexBean.inputNegation()}" update="display"/>
+                    <p:commandButton value="%" class="btn btn-default" actionListener="#{indexBean.inputPercent()}" update="display"/>
+                    <p:commandButton value="/" class="btn btn-warning" actionListener="#{indexBean.inputOperation(operationBean.DIV)}" update="display"/>
+                </div>
+                <div class="form-group">
+                    <p:commandButton value="7" class="btn btn-default" actionListener="#{indexBean.inputNumber('7')}" update="display"/>
+                    <p:commandButton value="8" class="btn btn-default" actionListener="#{indexBean.inputNumber('8')}" update="display"/>
+                    <p:commandButton value="9" class="btn btn-default" actionListener="#{indexBean.inputNumber('9')}" update="display"/>
+                    <p:commandButton value="*" class="btn btn-warning" actionListener="#{indexBean.inputOperation(operationBean.MUL)}" update="display"/>
+                </div>
+                <div class="form-group">
+                    <p:commandButton value="4" class="btn btn-default" actionListener="#{indexBean.inputNumber('4')}" update="display"/>
+                    <p:commandButton value="5" class="btn btn-default" actionListener="#{indexBean.inputNumber('5')}" update="display"/>
+                    <p:commandButton value="6" class="btn btn-default" actionListener="#{indexBean.inputNumber('6')}" update="display"/>
+                    <p:commandButton value="-" class="btn btn-warning" actionListener="#{indexBean.inputOperation(operationBean.SUB)}" update="display"/>
+                </div>
+                <div class="form-group">
+                    <p:commandButton value="1" class="btn btn-default" actionListener="#{indexBean.inputNumber('1')}" update="display"/>
+                    <p:commandButton value="2" class="btn btn-default" actionListener="#{indexBean.inputNumber('2')}" update="display"/>
+                    <p:commandButton value="3" class="btn btn-default" actionListener="#{indexBean.inputNumber('3')}" update="display"/>
+                    <p:commandButton value="+" class="btn btn-warning" actionListener="#{indexBean.inputOperation(operationBean.ADD)}" update="display"/>
+                </div>
+                <div class="form-group">
+                    <p:commandButton value="" class="btn btn-default" disabled="true"/>
+                    <p:commandButton value="0" class="btn btn-default" actionListener="#{indexBean.inputNumber('0')}" update="display"/>
+                    <p:commandButton value="." class="btn btn-default" actionListener="#{indexBean.inputDot()}" update="display"/>
+                    <p:commandButton value="=" class="btn btn-warning" actionListener="#{indexBean.inputEquale()}" update="display"/>
+                </div>
+            </h:form>
+        </div>
+    </h:body>
+</html>

@@ -1,0 +1,19 @@
+.text {
+    width: 92%;
+    height: 50px;
+    margin: 2%;
+    padding: 10px;
+    line-height: 50px;
+    font-weight: bold;
+    font-size: 25px;
+    text-align: right;
+}
+.btn {
+    width: 20%;
+    height: 40px;
+    margin: 0 2% 0 2%;
+    padding: 0;
+    line-height: 50px;
+    font-weight: bold;
+    font-size: 20px;
+}
