@@ -14,7 +14,7 @@ Javaで電卓のWebアプリケーションを作成しました。
 JDK8、NetBeans8.1をインストールすれば、Windows上でも動作します。
 GlassFishは、NetBeansインストール時に一緒にインストールすることができます。
 
-## デモ
+## Demo
 
 http://ec2-52-192-217-112.ap-northeast-1.compute.amazonaws.com:1234/calculator/
 
