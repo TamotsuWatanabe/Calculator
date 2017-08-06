@@ -14,7 +14,7 @@ Javaで電卓のWebアプリケーションを作成しました。
 JDK8、NetBeans8.1をインストールすれば、Windows上でも動作します。
 GlassFishは、NetBeansインストール時に一緒にインストールすることができます。
 
-## デモ
+## Demo
 
 AWS EC2にAmazon Linuxのインスタンスを作成し、デプロイしました。
 
